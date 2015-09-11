@@ -1,0 +1,20 @@
+{
+  "compilerOptions": {
+    "module": "commonjs",
+    "removeComments": true,
+    "preserveConstEnums": true,
+    "outDir": "../dist",
+    "noImplicitAny": true,
+    "target": "es5",
+    "sourceMap": true,
+    "jsx": "react"
+  },
+  "files": [
+    "actions.ts",
+    "constants.ts",
+    "dispatcher.ts",
+    "store.ts",
+    "main.tsx",
+    "lib.d.ts"
+  ]
+}

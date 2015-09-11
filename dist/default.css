@@ -1,0 +1,62 @@
+.embedded-browser {
+  display: flex;
+  flex-direction: column;
+  margin-left: 100%;
+  position: fixed;
+  left: 0;
+  top: 0;
+  height: 100vh;
+  width: 100vw;
+  background-color: white;
+}
+.embedded-browser .title-bar {
+  display: flex;
+  flex-direction: row;
+  flex: none;
+  color: white;
+  background-color: #333333;
+}
+.embedded-browser .fa {
+  cursor: pointer;
+  margin: 0em 0.5em;
+}
+.embedded-browser .page-title {
+  flex: auto;
+}
+.embedded-browser .page-forward {
+  flex: none;
+  margin-right: 0.5em;
+}
+.embedded-browser .page-body {
+  flex: auto;
+  height: 100%;
+  width: 100%;
+}
+.embedded-browser.anime-slidein {
+  animation-duration: 0.2s;
+  animation-name: browser-slidein;
+  margin-left: 0%;
+}
+.embedded-browser.anime-slideout {
+  animation-duration: 0.2s;
+  animation-name: browser-slideout;
+  margin-left: 100%;
+}
+@keyframes browser-slidein {
+  from {
+    margin-left: 100%;
+  }
+
+  to {
+    margin-left: 0%;
+  }
+}
+@keyframes browser-slideout {
+  from {
+    margin-left: 0%;
+  }
+
+  to {
+    margin-left: 100%;
+  }
+}

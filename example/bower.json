@@ -1,0 +1,11 @@
+{
+  "name": "react-embedded-browser-example",
+  "version": "0.0.0",
+  "authors": [
+    "rhysd <lin90162@yahoo.co.jp>"
+  ],
+  "license": "MIT",
+  "dependencies": {
+    "fontawesome": "~4.4.0"
+  }
+}

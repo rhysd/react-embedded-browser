@@ -1,0 +1,29 @@
+{
+  "name": "react-embedded-browser",
+  "version": "0.0.3",
+  "description": "Embedded browser component for React.js",
+  "main": "dist/main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "react",
+    "electron",
+    "browser"
+  ],
+  "author": "rhysd <lin90162@yahoo.co.jp>",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/rhysd/react-embedded-browser.git"
+  },
+  "bugs": {
+    "url": "https://github.com/rhysd/react-embedded-browser/issues"
+  },
+  "license": "MIT",
+  "devDependencies": {
+    "typescript": "^1.6.0-beta"
+  },
+  "dependencies": {
+    "flux": "^2.1.1"
+  }
+}

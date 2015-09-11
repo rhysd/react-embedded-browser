@@ -1,0 +1,8 @@
+bower_components
+/bower.json
+node_modules
+npm-debug.log
+typings
+test.json
+dist/*.js
+dist/*.js.map
