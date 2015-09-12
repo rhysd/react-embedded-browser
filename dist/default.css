@@ -25,9 +25,17 @@
   flex: auto;
   text-align: center;
 }
+.embedded-browser .page-back {
+  flex: none;
+  margin-left: 0.5em;
+}
 .embedded-browser .page-forward {
   flex: none;
   margin-right: 0.5em;
+}
+.embedded-browser .page-back.disabled,
+.embedded-browser .page-forward.disabled {
+  color: #666666;
 }
 .embedded-browser .page-body {
   flex: auto;
