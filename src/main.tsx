@@ -18,8 +18,7 @@ export class BrowserBody extends React.Component<BrowserBodyProps, {}> {
         webview.style.height = '100%';
         webview.style.width = '100%';
 
-        // Note: Avoid bug of react.d.ts
-        let wrapper = (this.refs['wrapper'] as any).getDOMNode() as HTMLDivElement;
+        let wrapper = React.findDOMNode(this.refs['wrapper']) as HTMLDivElement;
         wrapper.appendChild(webview);
 
         Action.createInnerFrame(webview);
@@ -92,8 +91,7 @@ export class PageTitle extends React.Component<PageTitleProps, {}> {
 
     componentDidMount() {
         this.title_listener = title => {
-            // Note: Avoid bug of react.d.ts
-            let node = (this.refs['node'] as any).getDOMNode() as HTMLDivElement;
+            let node = React.findDOMNode(this.refs['node']) as HTMLDivElement;
             node.innerText = title;
         };
         Store.on('update-title', this.title_listener);
@@ -218,9 +216,15 @@ export default class EmbeddedBrowser extends React.Component<EmbeddedBrowserProp
     }
 
     close() {
-        // Note: Avoid bug of react.d.ts
-        let root = (this.refs['root'] as any).getDOMNode();
+        let root = React.findDOMNode(this.refs['root']);
         root.className = this.props.className + " anime-slideout";
+    }
+
+    componentDidMount() {
+        let root = React.findDOMNode(this.refs['root']) as HTMLElement & {open: (url: string) => void};
+        root.open = function(url: string){
+            Action.openURL(url);
+        };
     }
 
     render() {

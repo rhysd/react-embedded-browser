@@ -72,7 +72,7 @@ store.dispatch_token = Dispatcher.register((action: ActionType) => {
             goBack();
             break;
         case ActionKind.CreateInnerFrame:
-            createFrame(action.iframe);
+            createFrame(action.inner_frame);
             break;
         case ActionKind.OpenURL:
             openURL(action.url);

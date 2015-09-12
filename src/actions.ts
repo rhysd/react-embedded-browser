@@ -4,7 +4,7 @@ import Dispatcher from './dispatcher';
 export interface ActionType {
     type: ActionKind;
     url?: string;
-    iframe: ElectronWebview;
+    inner_frame: ElectronWebview;
 }
 
 export function goForward() {

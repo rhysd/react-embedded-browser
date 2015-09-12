@@ -6,3 +6,4 @@ typings
 test.json
 dist/*.js
 dist/*.js.map
+example/index.js

@@ -1,7 +1,9 @@
 {
   "name": "react-embedded-browser-example",
+  "productName": "React EmbeddedBrowser Example",
   "version": "0.0.0",
   "description": "",
+  "main": "./main.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -14,6 +16,7 @@
   "devDependencies": {
     "babel": "^5.8.23",
     "babelify": "^6.3.0",
-    "browserify": "^11.1.0"
+    "browserify": "^11.1.0",
+    "electron-prebuilt": "^0.32.1"
   }
 }
