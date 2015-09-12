@@ -44,14 +44,27 @@ interface ExternalButtonProps {
 
 export class ExternalButton extends React.Component<ExternalButtonProps, {}> {
     public static defaultProps = {className: ""};
+    opener: (url: string) => void;
 
     constructor(props: ExternalButtonProps) {
         super(props);
     }
 
+    open() {
+        if (!this.opener) {
+            const shell = global.require('shell');
+            if (shell) {
+                this.opener = shell.openExternal;
+            } else {
+                this.opener = require('open');
+            }
+        }
+        this.opener(Store.getCurrentURL());
+    }
+
     render() {
         return (
-            <div className={this.props.className}>
+            <div className={this.props.className} onClick={() => this.open()}>
                 {this.props.children}
             </div>
         );

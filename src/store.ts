@@ -15,6 +15,13 @@ class Store extends EventEmitter {
         this.forwardable = false;
         this.backable = false;
     }
+
+    getCurrentURL() {
+        if (!this.frame) {
+            return '';
+        }
+        return this.frame.getUrl();
+    }
 }
 
 let store = new Store();
@@ -53,6 +60,7 @@ function createFrame(frame: ElectronWebview) {
     store.frame = frame;
     store.frame.addEventListener('did-finish-load', () => {
         store.emit('update-title', store.frame.getTitle());
+        store.emit('update-url', store.frame.getUrl());
         updateForwardable(store.frame.canGoForward());
         updateBackable(store.frame.canGoBack());
     });

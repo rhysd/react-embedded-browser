@@ -24,6 +24,8 @@
     "typescript": "^1.6.0-beta"
   },
   "dependencies": {
-    "flux": "^2.1.1"
+    "flux": "^2.1.1",
+    "open": "0.0.5",
+    "react": "^0.13.3"
   }
 }
