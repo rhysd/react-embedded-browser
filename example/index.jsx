@@ -4,13 +4,13 @@ import EmbeddedBrowser from 'react-embedded-browser';
 function show() {
     let eb = document.querySelector('.embedded-browser');
     eb.className = 'embedded-browser anime-slidein';
-    eb.open('https://github.com');
+    eb.open('https://google.com');
 }
 
 React.render(
-    <div className="main">
+    <div>
         <button type="button" onClick={show}>push me</button>
-        <EmbeddedBrowser/>
+        <EmbeddedBrowser id="scaffolded-browser" />
     </div>,
-    document.body
+    document.getElementById('example1')
 );
