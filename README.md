@@ -3,9 +3,11 @@ React Embedded Browser Component for Electron
 
 This is a React.js component to provide an embedded browser like mobile apps.
 
-![screenshot]()
+![screenshot](https://raw.githubusercontent.com/rhysd/ss/master/react-embedded-browser/main.gif)
 
 ## Usage
+
+You can try [the example in this repository](example/);
 
 Insall with npm
 
