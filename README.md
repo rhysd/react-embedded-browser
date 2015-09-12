@@ -48,8 +48,9 @@ If you only want to change the design of embedded browser, prepare your favorite
 If you want to arrange the back/forward buttons, external buttons, title and webview, you can use the each components and you can make your own embedded browser as you like.  Please use `<BackButton>`, `<ForwardButton>`, `<PageTitle>`, `<ExternalButton>` and `<BrowserBody>` as below.  Note that each elements don't depend on FontAwesome.
 
 ```javascript
-render() {
-    return (
+import {BackButton ForwardButton PageTitle ExternalButton BrowserBody} from 'react-embedded-browser';
+
+React.render(
         <div className="my-so-cool-browser">
             <div className="my-so-cool-title-bar">
                 <BackButton className="page-back">
@@ -64,9 +65,9 @@ render() {
                 </ExternalButton>
             </div>
             <BrowserBody className="page-body" ref="body"/>
-        </div>
+        </div>,
+        document.body
     );
-}
 ```
 
 To tell which URL should be open, you can use `open()` method in `<BrowserBody/>` DOM node.
