@@ -1,7 +1,7 @@
 React Embedded Browser Component for Electron
 =============================================
 
-This is a React.js component to provide an embedded browser like mobile apps.
+This is a [React.js](http://facebook.github.io/react/) component to provide an embedded browser like mobile apps.  This component is assumed to be used in [Electron](http://electron.atom.io/) app.
 
 ![screenshot](https://raw.githubusercontent.com/rhysd/ss/master/react-embedded-browser/main.gif)
 
