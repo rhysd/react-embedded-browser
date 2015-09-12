@@ -37,13 +37,15 @@ let browser = document.querySelector('.embedded-browser');
 browser.open('https://example.com');
 ```
 
-__Node:__ Only one embedded browser can exist in the app.
+__Note:__ Only one embedded browser can exist in the app.
+
+__Note:__ `<EmbeddedBrowser>` depends on [FontAwesome](https://fortawesome.github.io/Font-Awesome/).  Please be sure to install it in your project.
 
 ## Customization
 
 If you only want to change the design of embedded browser, prepare your favorite CSS file and simply use it.  You can copy the `default.css` and modify it.
 
-If you want to arrange the back/forward buttons, external buttons, title and webview, you can use the each components and you can make your own embedded browser as you like.  Please use `<BackButton>`, `<ForwardButton>`, `<PageTitle>`, `<ExternalButton>` and `<BrowserBody>` as below.
+If you want to arrange the back/forward buttons, external buttons, title and webview, you can use the each components and you can make your own embedded browser as you like.  Please use `<BackButton>`, `<ForwardButton>`, `<PageTitle>`, `<ExternalButton>` and `<BrowserBody>` as below.  Note that each elements don't depend on FontAwesome.
 
 ```javascript
 render() {
@@ -51,14 +53,14 @@ render() {
         <div className="my-so-cool-browser">
             <div className="my-so-cool-title-bar">
                 <BackButton className="page-back">
-                    <i className="fa fa-arrow-left"/>
+                    Back!
                 </BackButton>
                 <ForwardButton className="page-forward">
-                    <i className="fa fa-arrow-right"/>
+                    Forward!
                 </ForwardButton>
                 <PageTitle className="page-title"/>
                 <ExternalButton className="page-external">
-                    <i className="fa fa-external-link"/>
+                    Open in external browser!
                 </ExternalButton>
             </div>
             <BrowserBody className="page-body" ref="body"/>
