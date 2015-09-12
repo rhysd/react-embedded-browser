@@ -4,6 +4,7 @@ import Store from './store';
 
 interface BrowserBodyProps {
     className?: string;
+    ref: string | ((component: React.Component<any, any>) => any);
 }
 
 export class BrowserBody extends React.Component<BrowserBodyProps, {}> {
@@ -18,10 +19,14 @@ export class BrowserBody extends React.Component<BrowserBodyProps, {}> {
         webview.style.height = '100%';
         webview.style.width = '100%';
 
-        let wrapper = React.findDOMNode(this.refs['wrapper']) as HTMLDivElement;
+        let wrapper = React.findDOMNode(this.refs['wrapper']) as HTMLDivElement & {open: (url: string) => void};
         wrapper.appendChild(webview);
 
         Action.createInnerFrame(webview);
+
+        wrapper.open = function(url: string){
+            Action.openURL(url);
+        }
     }
 
     render() {
@@ -222,8 +227,8 @@ export default class EmbeddedBrowser extends React.Component<EmbeddedBrowserProp
 
     componentDidMount() {
         let root = React.findDOMNode(this.refs['root']) as HTMLElement & {open: (url: string) => void};
-        root.open = function(url: string){
-            Action.openURL(url);
+        root.open = (url: string) => {
+            (React.findDOMNode(this.refs['body']) as any).open(url);
         };
     }
 
@@ -245,7 +250,7 @@ export default class EmbeddedBrowser extends React.Component<EmbeddedBrowserProp
                         <i className="fa fa-times"/>
                     </CloseButton>
                 </div>
-                <BrowserBody className="page-body" />
+                <BrowserBody className="page-body" ref="body"/>
             </div>
         );
     }
