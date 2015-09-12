@@ -15,7 +15,7 @@
   flex: none;
   color: white;
   background-color: #333333;
-  margin: 0.5em 0em;
+  padding: 0.5em 0em;
 }
 .embedded-browser .fa {
   cursor: pointer;
@@ -23,6 +23,7 @@
 }
 .embedded-browser .page-title {
   flex: auto;
+  text-align: center;
 }
 .embedded-browser .page-forward {
   flex: none;

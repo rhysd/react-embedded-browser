@@ -52,7 +52,7 @@ function createFrame(frame: ElectronWebview) {
     }
     store.frame = frame;
     store.frame.addEventListener('did-finish-load', () => {
-        this.emit('update-title', store.frame.getTitle());
+        store.emit('update-title', store.frame.getTitle());
         updateForwardable(store.frame.canGoForward());
         updateBackable(store.frame.canGoBack());
     });

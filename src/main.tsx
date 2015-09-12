@@ -96,7 +96,7 @@ export class PageTitle extends React.Component<PageTitleProps, {}> {
 
     componentDidMount() {
         this.title_listener = title => {
-            let node = React.findDOMNode(this.refs['node']) as HTMLDivElement;
+            let node = React.findDOMNode(this.refs['title']) as HTMLDivElement;
             node.innerText = title;
         };
         Store.on('update-title', this.title_listener);
