@@ -1,6 +1,6 @@
 {
   "name": "react-embedded-browser",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Embedded browser component for React.js",
   "main": "dist/main.js",
   "scripts": {

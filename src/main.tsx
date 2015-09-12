@@ -4,6 +4,8 @@ import Store from './store';
 
 interface BrowserBodyProps {
     className?: string;
+    useragent?: string;
+    httpreferrer?: string;
     ref: string | ((component: React.Component<any, any>) => any);
 }
 
@@ -22,11 +24,19 @@ export class BrowserBody extends React.Component<BrowserBodyProps, {}> {
         let wrapper = React.findDOMNode(this.refs['wrapper']) as HTMLDivElement & {open: (url: string) => void};
         wrapper.appendChild(webview);
 
-        Action.createInnerFrame(webview);
-
         wrapper.open = function(url: string){
             Action.openURL(url);
         }
+
+        if (this.props.useragent) {
+            webview.useragent = this.props.useragent;
+        }
+
+        if (this.props.httpreferrer) {
+            webview.httpreferrer = this.props.httpreferrer;
+        }
+
+        Action.createInnerFrame(webview);
     }
 
     render() {
@@ -224,6 +234,8 @@ export class BackButton extends React.Component<BackButtonProps, BackButtonState
 
 interface EmbeddedBrowserProps {
     className?: string;
+    useragent?: string;
+    httpreferrer?: string;
 }
 
 export default class EmbeddedBrowser extends React.Component<EmbeddedBrowserProps, {}> {
@@ -263,7 +275,7 @@ export default class EmbeddedBrowser extends React.Component<EmbeddedBrowserProp
                         <i className="fa fa-times"/>
                     </CloseButton>
                 </div>
-                <BrowserBody className="page-body" ref="body"/>
+                <BrowserBody className="page-body" useragent={this.props.useragent} httpreferrer={this.props.httpreferrer} ref="body"/>
             </div>
         );
     }
