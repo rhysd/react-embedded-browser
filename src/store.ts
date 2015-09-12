@@ -47,6 +47,9 @@ function goBack() {
 }
 
 function createFrame(frame: ElectronWebview) {
+    if (store.frame) {
+        console.error('Error: Only one embedded browser exists!', store.frame)
+    }
     store.frame = frame;
     store.frame.addEventListener('did-finish-load', () => {
         this.emit('update-title', store.frame.getTitle());
