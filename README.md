@@ -9,7 +9,7 @@ This is a [React.js](http://facebook.github.io/react/) component to provide an e
 
 You can try [the example in this repository](example/);
 
-Insall with npm
+Insall as [npm package](https://www.npmjs.com/package/react-embedded-browser)
 
 ```
 $ npm install react-embedded-browser
